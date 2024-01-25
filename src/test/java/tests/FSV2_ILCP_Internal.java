@@ -55,7 +55,7 @@ public class FSV2_ILCP_Internal {
         dashboard.clickDropdown();
         dashboard.clickILCP();
         ilcp.clickILCP_Internal();
-        Thread.sleep(7000);
+        Thread.sleep(6000);
 //        WebElement endFacility = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div/div/div[2]/div[1]/div[85]"));
 //////        ((JavascriptExecutor)driver).executeScript("scrollBy(0, 250)", m);
 //        Actions actions = new Actions(driver);
