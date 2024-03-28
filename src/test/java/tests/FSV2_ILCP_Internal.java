@@ -27,18 +27,20 @@ public class FSV2_ILCP_Internal {
     private LoginPage loginPage;
     private Dashboard dashboard;
     private ILCP ilcp;
+
     @BeforeTest
     @Parameters({"browser"})
     public void setup(String browser) throws MalformedURLException {
-        if(browser.equals("chrome")){
+        if (browser.equals("chrome")) {
             ChromeOptions chromeOptions = new ChromeOptions();
 //            chromeOptions.addArguments("--remote-allow-origins=*");
-            chromeOptions.setCapability("platformName","Windows");
+            chromeOptions.setCapability("platformName", "Windows");
             driver = new ChromeDriver(chromeOptions);
             driver.manage().window().maximize();
         }
     }
-//    @AfterClass
+
+    //    @AfterClass
 //    public void tearDown() {
 //        DriverManager.quitDriver();
 //    }
@@ -50,23 +52,18 @@ public class FSV2_ILCP_Internal {
         webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(60));
         driver.get(Config.AppConfig.BASE_URL);
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@class=\"nav-link\"]"))).click();
-        loginPage.login(USERNAME,PASSWORD);
+        loginPage.login(USERNAME, PASSWORD);
         Thread.sleep(3000);
         dashboard.clickDropdown();
         dashboard.clickILCP();
         ilcp.clickILCP_Internal();
         Thread.sleep(6000);
-//        WebElement endFacility = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div/div/div[2]/div[1]/div[85]"));
-//////        ((JavascriptExecutor)driver).executeScript("scrollBy(0, 250)", m);
-//        Actions actions = new Actions(driver);
-//        actions.scrollToElement(endFacility).perform();
-//        Thread.sleep(800);
-        List<WebElement> text = driver.findElements(By.className("rs-table-row"));
-        for(int i=0; i< text.size(); i++)
-        {
-                System.out.println(text.get(i).getAttribute("textContent"));
-        }
+        List<WebElement> text = driver.findElements(By.className("rs-table-cell-content"));
+            for (int i = 0; i < text.size(); i++) {
+                System.out.println(text.get(i).getAttribute("innerText"));
+            }
         driver.quit();
     }
-    }
+}
+
 
