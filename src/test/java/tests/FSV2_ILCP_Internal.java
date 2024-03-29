@@ -45,7 +45,7 @@ public class FSV2_ILCP_Internal {
 //        DriverManager.quitDriver();
 //    }
     @Test(priority = 1)
-    public void gotoInternal() throws InterruptedException {
+    public void gotoInternal_Dashboard() throws InterruptedException {
         loginPage = new LoginPage(driver);
         dashboard = new Dashboard(driver);
         ilcp = new ILCP(driver);
@@ -58,10 +58,14 @@ public class FSV2_ILCP_Internal {
         dashboard.clickILCP();
         ilcp.clickILCP_Internal();
         Thread.sleep(6000);
+
         List<WebElement> text = driver.findElements(By.className("rs-table-cell-content"));
-            for (int i = 0; i < text.size(); i++) {
-                System.out.println(text.get(i).getAttribute("innerText"));
+        for (int i = 0; i < text.size(); i++) {
+            if (text.get(i).getAttribute("textContent") != "") {
+                System.out.println(text.get(i).getAttribute("textContent"));
             }
+
+        }
         driver.quit();
     }
 }
