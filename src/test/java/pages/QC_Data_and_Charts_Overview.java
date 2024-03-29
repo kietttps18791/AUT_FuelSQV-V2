@@ -35,15 +35,15 @@ public class QC_Data_and_Charts_Overview {
     }
     public void selectSampleName(){
         Select select = new Select( driver.findElement(By.id("sampleName")));
-        select.selectByValue("Gasoline QC 4");// Change sampleName in ""
+        select.selectByValue("Gasoline QC 3");// Change sampleName in ""
          }
     public void selectInstrument(){
         Select select = new Select( driver.findElement(By.id("instrument")));
-        select.selectByValue("4026");// Change instrument in ""
+        select.selectByValue("5006");// Change instrument in ""
     }
     public void selectParameter(){
         Select select = new Select( driver.findElement(By.id("parameter")));
-        select.selectByValue("Benzene");// Change parameter in ""
+        select.selectByValue("Olefins");// Change parameter in ""
     }
     public void getTotal(){
         WebElement getTotal = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"root\"]/section[1]/div/div/div[4]/div[1]/div[2]/div/div[2]/div[1]/div/div/div/div[2]/div/div/div[6]/div[2]/div")));
@@ -97,9 +97,40 @@ public class QC_Data_and_Charts_Overview {
         WebElement getTotal = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='statistics-table']//div[2]//div[1]//div[1]//div[1]//div[2]//div[1]//div[1]//div[6]//div[2]")));
         System.out.println("Site Precision = " + getTotal.getAttribute("textContent"));
     }
+    public void clickButtonChartStage(){
+        WebElement clickButton = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='Perform Initial Assessment']")));
+    }
 
+    public void createChartStage(){
+        WebElement clickButton = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='Perform Initial Assessment']")));
+//        if(!(driver.findElements(By.xpath("//button[normalize-space()='Perform Initial Assessment']")).size() !=0)){
+//            System.out.println("Chart Stage In Development");
+//            driver.quit();
+//        } else {
+//            WebElement clickButton = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='Perform Initial Assessment']")));
+//            clickButton.click();
+//        }
+        WebElement clickradioTrending = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//label[@for='radioTrending-pass']")));
+        clickradioTrending.click();
+        WebElement clickradioClustering = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//label[@for='radioClustering-pass']")));
+        clickradioClustering.click();
+        WebElement clickradioCyclical = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//label[@for='radioCyclical-pass']")));
+        clickradioCyclical.click();
+        WebElement clickradioDataNormal = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//label[@for='radioDataNormal-pass']")));
+        clickradioDataNormal.click();
+        WebElement clickradioTpi = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//label[@for='radioTpi-pass']")));
+        clickradioTpi.click();
+        WebElement inputComment = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//textarea[@id='exampleForm.ControlTextarea1']")));
+        inputComment.sendKeys("Test 1");
+        WebElement clickradioOutcome = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//label[@for='radioOutcome-pass']")));
+        clickradioOutcome.click();
+        WebElement save = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='Save']")));
+        save.click();
+    }
+    public void CheckAssessments() {
+        WebElement gotoAssessments = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='uncontrolled-tab-example-tab-Assessments']")));
+        gotoAssessments.click();
 
-
-
+    }
 
 }

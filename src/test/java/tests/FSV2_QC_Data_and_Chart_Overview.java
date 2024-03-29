@@ -13,6 +13,7 @@ import pages.Dashboard;
 import pages.ILCP;
 import pages.LoginPage;
 import pages.QC_Data_and_Charts_Overview;
+import utils.DriverManager;
 
 import javax.swing.*;
 import java.net.MalformedURLException;
@@ -41,17 +42,18 @@ public class FSV2_QC_Data_and_Chart_Overview {
         }
     }
 
-    //    @AfterClass
-//    public void tearDown() {
-//        DriverManager.quitDriver();
-//    }
+        @AfterClass
+    public void tearDown() {
+        DriverManager.quitDriver();
+    }
     @Test(priority = 1)
-    public void goto_QC_DataAnd_Charts_Overview() throws InterruptedException {
+    public void getSummaryOverview() throws InterruptedException {
         loginPage = new LoginPage(driver);
         dashboard = new Dashboard(driver);
         webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(60));
         qc_data_and_charts_overview = new QC_Data_and_Charts_Overview(driver,webDriverWait);
         driver.get(Config.AppConfig.BASE_URL);
+        //click sign in
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@class=\"nav-link\"]"))).click();
         loginPage.login(USERNAME, PASSWORD);
         Thread.sleep(3000);
@@ -64,6 +66,7 @@ public class FSV2_QC_Data_and_Chart_Overview {
         qc_data_and_charts_overview.selectInstrument();
         qc_data_and_charts_overview.selectParameter();
         System.out.println("===============================================");
+        Thread.sleep(1000);
         System.out.println(driver.findElement(By.xpath("//*[@id=\"root\"]/section[1]/div/div/div[4]/div[1]/div[2]/div/div[1]")).getAttribute("textContent"));
         System.out.println("-----------------------------------------------");
         qc_data_and_charts_overview.getParameter();
@@ -80,6 +83,11 @@ public class FSV2_QC_Data_and_Chart_Overview {
         qc_data_and_charts_overview.getTPI();
         qc_data_and_charts_overview.getLCL();
         qc_data_and_charts_overview.getSitePrecision();
-        driver.quit();
+//        driver.quit();
     }
+//    @Test(priority = 2)
+//    public void createChartStage() throws InterruptedException {
+//    qc_data_and_charts_overview.createChartStage();
+//    }
+
 }
