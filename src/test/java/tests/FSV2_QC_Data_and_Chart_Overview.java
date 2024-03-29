@@ -57,15 +57,29 @@ public class FSV2_QC_Data_and_Chart_Overview {
         Thread.sleep(3000);
         dashboard.clickDropdown();
         qc_data_and_charts_overview.clickQCDataandCharts();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         qc_data_and_charts_overview.selectLocation();
         qc_data_and_charts_overview.selectMethod();
         qc_data_and_charts_overview.selectSampleName();
         qc_data_and_charts_overview.selectInstrument();
         qc_data_and_charts_overview.selectParameter();
+        System.out.println("===============================================");
+        System.out.println(driver.findElement(By.xpath("//*[@id=\"root\"]/section[1]/div/div/div[4]/div[1]/div[2]/div/div[1]")).getAttribute("textContent"));
+        System.out.println("-----------------------------------------------");
+        qc_data_and_charts_overview.getParameter();
+        qc_data_and_charts_overview.getAverage();
+        qc_data_and_charts_overview.getStd_RMS();
+        qc_data_and_charts_overview.getStd_MR();
+        qc_data_and_charts_overview.getRepeatability();
+        qc_data_and_charts_overview.getUCL();
         qc_data_and_charts_overview.getTotal();
-//        WebElement getTotal = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"root\"]/section[1]/div/div/div[4]/div[1]/div[2]/div/div[2]/div[1]/div/div/div/div[2]/div/div/div[6]/div[2]/div")));
-//        System.out.println("Total = " + getTotal.getAttribute("textContent"));
+        qc_data_and_charts_overview.getReproducibility();
+        qc_data_and_charts_overview.getPrecisionRatio();
+        qc_data_and_charts_overview.getTPI();
+        qc_data_and_charts_overview.getAndersonDarling();
+        qc_data_and_charts_overview.getTPI();
+        qc_data_and_charts_overview.getLCL();
+        qc_data_and_charts_overview.getSitePrecision();
         driver.quit();
     }
 }

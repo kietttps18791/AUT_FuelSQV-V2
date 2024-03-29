@@ -20,8 +20,6 @@ public class QC_Data_and_Charts_Overview {
         this.webDriverWait = webDriverWait;
 
     }
-
-
     public void clickQCDataandCharts(){
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@class=\"dropdown-item\"][1]"))).click();
     }
@@ -33,24 +31,71 @@ public class QC_Data_and_Charts_Overview {
     }
     public void selectMethod(){
         Select select = new Select( driver.findElement(By.id("method")));
-        select.selectByValue("D5191");// Change method in ""
+        select.selectByValue("D3606");// Change method in ""
     }
     public void selectSampleName(){
         Select select = new Select( driver.findElement(By.id("sampleName")));
-        select.selectByValue("Gasoline QC 10");// Change sampleName in ""
+        select.selectByValue("Gasoline QC 4");// Change sampleName in ""
          }
     public void selectInstrument(){
         Select select = new Select( driver.findElement(By.id("instrument")));
-        select.selectByValue("Demo3");// Change instrument in ""
+        select.selectByValue("4026");// Change instrument in ""
     }
     public void selectParameter(){
         Select select = new Select( driver.findElement(By.id("parameter")));
-        select.selectByValue("DVPE");// Change parameter in ""
+        select.selectByValue("Benzene");// Change parameter in ""
     }
     public void getTotal(){
         WebElement getTotal = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"root\"]/section[1]/div/div/div[4]/div[1]/div[2]/div/div[2]/div[1]/div/div/div/div[2]/div/div/div[6]/div[2]/div")));
         System.out.println("Total = " + getTotal.getAttribute("textContent"));
-//        driver.findElements(By.xpath("//div[@title='22']"));
+    }
+    public void getParameter(){
+        WebElement getTotal = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//body/div[@id='root']/section[@class='SectionComponent py-1 position-relative bg-white text-dark']/div[contains(@class,'container py-md-1 container my-md-1')]/div[@class='chart-section-container']/div[@class='row']/div[@class='chart-section-overall-container']/div[@class='charts-master-container']/div/div[@class='statistics-table']/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]")));
+        System.out.println("Parameter = " + getTotal.getAttribute("textContent"));
+    }
+    public void getAverage(){
+        WebElement getTotal = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='charts-master-container']//div//div[1]//div[1]//div[1]//div[1]//div[2]//div[1]//div[1]//div[1]//div[2]")));
+        System.out.println("Average = " + getTotal.getAttribute("textContent"));
+    }
+    public void getStd_RMS(){
+        WebElement getTotal = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='charts-master-container']//div//div[1]//div[1]//div[1]//div[1]//div[2]//div[1]//div[1]//div[2]//div[2]")));
+        System.out.println("Standard Deviation, RMS = " + getTotal.getAttribute("textContent"));
+    }
+    public void getStd_MR(){
+        WebElement getTotal = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='charts-master-container']//div//div[1]//div[1]//div[1]//div[1]//div[2]//div[1]//div[1]//div[3]//div[2]")));
+        System.out.println("Standard Deviation, MR = " + getTotal.getAttribute("textContent"));
+    }
+    public void getRepeatability(){
+        WebElement getTotal = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='charts-master-container']//div//div[1]//div[1]//div[1]//div[1]//div[2]//div[1]//div[1]//div[4]//div[2]")));
+        System.out.println("Repeatability = " + getTotal.getAttribute("textContent"));
+    }
+    public void getUCL(){
+        WebElement getTotal = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='charts-master-container']//div//div[1]//div[1]//div[1]//div[1]//div[2]//div[1]//div[1]//div[5]//div[2]")));
+        System.out.println("UCL = " + getTotal.getAttribute("textContent"));
+    }
+    public void getReproducibility(){
+        WebElement getTotal = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='statistics-table']//div[2]//div[1]//div[1]//div[1]//div[2]//div[1]//div[1]//div[1]//div[2]")));
+        System.out.println("getReproducibility = " + getTotal.getAttribute("textContent"));
+    }
+    public void getPrecisionRatio(){
+        WebElement getTotal = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='statistics-table']//div[2]//div[1]//div[1]//div[1]//div[2]//div[1]//div[1]//div[2]//div[2]")));
+        System.out.println("Reproducibility = " + getTotal.getAttribute("textContent"));
+    }
+    public void getTPI(){
+        WebElement getTotal = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='statistics-table']//div[2]//div[1]//div[1]//div[1]//div[2]//div[1]//div[1]//div[3]//div[2]")));
+        System.out.println("TPI = " + getTotal.getAttribute("textContent"));
+    }
+    public void getAndersonDarling(){
+        WebElement getTotal = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='statistics-table']//div[2]//div[1]//div[1]//div[1]//div[2]//div[1]//div[1]//div[4]//div[2]")));
+        System.out.println("Anderson Darling = " + getTotal.getAttribute("textContent"));
+    }
+    public void getLCL(){
+        WebElement getTotal = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='statistics-table']//div[2]//div[1]//div[1]//div[1]//div[2]//div[1]//div[1]//div[5]//div[2]")));
+        System.out.println("LCL = " + getTotal.getAttribute("textContent"));
+    }
+    public void getSitePrecision(){
+        WebElement getTotal = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='statistics-table']//div[2]//div[1]//div[1]//div[1]//div[2]//div[1]//div[1]//div[6]//div[2]")));
+        System.out.println("Site Precision = " + getTotal.getAttribute("textContent"));
     }
 
 
