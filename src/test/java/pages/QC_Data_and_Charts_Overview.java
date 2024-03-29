@@ -97,6 +97,15 @@ public class QC_Data_and_Charts_Overview {
         WebElement getTotal = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='statistics-table']//div[2]//div[1]//div[1]//div[1]//div[2]//div[1]//div[1]//div[6]//div[2]")));
         System.out.println("Site Precision = " + getTotal.getAttribute("textContent"));
     }
+    public void getFullKey(){
+        WebElement getLocation = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("location")));
+        WebElement getMethod = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("method")));
+        WebElement getSampleName = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("sampleName")));
+        WebElement getInstrument = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("instrument")));
+        WebElement getParameter = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("parameter")));
+        System.out.println("FullKey : "+getLocation.getAttribute("value") +"|"+ getMethod.getAttribute("value")+"|"+ getSampleName.getAttribute("value")+"|"+ getInstrument.getAttribute("value")+"|"+ getParameter.getAttribute("value") );
+    }
+
 
 
 

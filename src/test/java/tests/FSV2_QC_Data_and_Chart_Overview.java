@@ -31,7 +31,7 @@ public class FSV2_QC_Data_and_Chart_Overview {
 
     @BeforeTest
     @Parameters({"browser"})
-    public void setup(String browser) throws MalformedURLException {
+    public void setup(String browser) {
         if (browser.equals("chrome")) {
             ChromeOptions chromeOptions = new ChromeOptions();
 //            chromeOptions.addArguments("--remote-allow-origins=*");
@@ -64,6 +64,7 @@ public class FSV2_QC_Data_and_Chart_Overview {
         qc_data_and_charts_overview.selectInstrument();
         qc_data_and_charts_overview.selectParameter();
         System.out.println("===============================================");
+        qc_data_and_charts_overview.getFullKey();
         System.out.println(driver.findElement(By.xpath("//*[@id=\"root\"]/section[1]/div/div/div[4]/div[1]/div[2]/div/div[1]")).getAttribute("textContent"));
         System.out.println("-----------------------------------------------");
         qc_data_and_charts_overview.getParameter();
