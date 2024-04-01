@@ -81,6 +81,6 @@ public class FSV2_QC_Data_and_Chart_Overview {
         qc_data_and_charts_overview.getTPI();
         qc_data_and_charts_overview.getLCL();
         qc_data_and_charts_overview.getSitePrecision();
-        driver.quit();
+//        driver.quit();
     }
 }
