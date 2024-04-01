@@ -1,99 +1,15 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Fuel SQC V2" parallel="tests" thread-count="1">
-    <test name="ASM_CHROME_LoginPage">
-        <parameter name="browser" value="chrome"/>
-        <classes>
-            <class name="tests.FSV2_ILCP_Internal"/>
-        </classes>
-    </test>
-<!--    <test name="ASM_FIREFOX_LoginPage">-->
-<!--        <parameter name="browser" value="firefox"/>-->
+<!--    <test name="ASM_CHROME_LoginPage">-->
+<!--        <parameter name="browser" value="chrome"/>-->
 <!--        <classes>-->
 <!--            <class name="tests.FSV2_ILCP_Internal"/>-->
 <!--        </classes>-->
 <!--    </test>-->
-<!--    <test name="ASM_CHROME_ProductTest">-->
-<!--        <parameter name="browser" value="chrome"/>-->
-<!--        <classes>-->
-<!--            <class name="tests.TC03_Product"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="ASM_FIREFOX_ProductTest">-->
-<!--        <parameter name="browser" value="firefox"/>-->
-<!--        <classes>-->
-<!--            <class name="tests.TC03_Product"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="ASM_CHORME_ProductList">-->
-<!--        <parameter name="browser" value="chrome"/>-->
-<!--        <classes>-->
-<!--            <class name="tests.TC04_ProductList"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="ASM_FIREFOX_ProductList">-->
-<!--        <parameter name="browser" value="firefox"/>-->
-<!--        <classes>-->
-<!--            <class name="tests.TC04_ProductList"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="ASM_CHROME_PrintBarcode">-->
-<!--        <parameter name="browser" value="chrome"/>-->
-<!--        <classes>-->
-<!--            <class name="tests.TC06_PrintBarcode"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="ASM_FIREFOX_PrintBarcode">-->
-<!--        <parameter name="browser" value="firefox"/>-->
-<!--        <classes>-->
-<!--            <class name="tests.TC06_PrintBarcode"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="ASM_CHROME_AddProductPrintBarCode">-->
-<!--        <parameter name="browser" value="chrome"/>-->
-<!--        <classes>-->
-<!--            <class name="tests.TC07_AddProductPrintBarCode"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="ASM_FIREFOX_AddProductPrintBarCode">-->
-<!--        <parameter name="browser" value="firefox"/>-->
-<!--        <classes>-->
-<!--            <class name="tests.TC07_AddProductPrintBarCode"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="ASM_CHROME_AddSales">-->
-<!--        <parameter name="browser" value="chrome"/>-->
-<!--        <classes>-->
-<!--            <class name="tests.TC08_AddSales"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="ASM_FIREFOX_AddSales">-->
-<!--        <parameter name="browser" value="firefox"/>-->
-<!--        <classes>-->
-<!--            <class name="tests.TC08_AddSales"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="ASM_CHROME_Purchases">-->
-<!--        <parameter name="browser" value="chrome"/>-->
-<!--        <classes>-->
-<!--            <class name="tests.TC09_Purchases"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="ASM_FIREFOX_Purchases">-->
-<!--        <parameter name="browser" value="firefox"/>-->
-<!--        <classes>-->
-<!--            <class name="tests.TC09_Purchases"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="ASM_CHROME_AddPurchases">-->
-<!--        <parameter name="browser" value="chrome"/>-->
-<!--        <classes>-->
-<!--            <class name="tests.TC10_AddPurchases"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="ASM_FIREFOX_AddPurchases">-->
-<!--        <parameter name="browser" value="firefox"/>-->
-<!--        <classes>-->
-<!--            <class name="tests.TC10_AddPurchases"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Goto_QC_Overview">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="tests.FSV2_QC_Data_and_Chart_Overview"/>
+        </classes>
+    </test>
 </suite>
